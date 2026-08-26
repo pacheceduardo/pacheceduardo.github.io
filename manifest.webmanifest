@@ -1,0 +1,22 @@
+{
+  "name": "4Bros Beach Volley",
+  "short_name": "4Bros",
+  "description": "Safe space de vôlei de praia em Porto Alegre. Confirme presença, acompanhe o rateio e receba os avisos do time.",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fef9ed",
+  "theme_color": "#d56301",
+  "lang": "pt-BR",
+  "categories": ["sports", "social"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Próximo jogo", "url": "/jogos", "description": "Confirmar presença" },
+    { "name": "Minha carteira", "url": "/carteira", "description": "Ver pendências e PIX" }
+  ]
+}
