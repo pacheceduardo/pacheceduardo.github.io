@@ -39,8 +39,8 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(request.url);
 
-  // O Torneio vive em outro app, no subcaminho /torneio. O SW do 4Bros não deve
-  // interceptar nada dali (senão, offline, serviria a casca errada).
+  // O Torneio vive em outro app, no subcaminho /torneio. O SW do 4Bros nao deve
+  // interceptar nada dali (senao, offline, serviria a casca errada).
   if (url.pathname.startsWith("/torneio")) return;
 
   // Nada de outra origem (Supabase, Google Fonts) passa pelo cache.
