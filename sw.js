@@ -9,7 +9,7 @@
  * mostrar nada, porque a pessoa confia no número errado.
  */
 
-const CACHE = "4bros-shell-v2";
+const CACHE = "4bros-shell-v3";
 const SHELL = [
   "/",
   "/manifest.webmanifest",
@@ -55,14 +55,21 @@ self.addEventListener("fetch", (event) => {
   }
 
   // Assets versionados pelo Vite: cache primeiro, é seguro porque o nome muda.
+  //
+  // Só guarda resposta OK. Sem isso, um 404 passageiro (ex: CDN ainda
+  // propagando um deploy novo bem na hora que alguém abriu o app) fica
+  // cacheado para sempre e trava a pessoa numa tela em branco — já
+  // aconteceu uma vez aqui.
   if (url.pathname.startsWith("/assets/") || url.pathname.startsWith("/icons/")) {
     event.respondWith(
       caches.match(request).then(
         (hit) =>
           hit ??
           fetch(request).then((res) => {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(request, copy));
+            if (res.ok) {
+              const copy = res.clone();
+              caches.open(CACHE).then((c) => c.put(request, copy));
+            }
             return res;
           }),
       ),
