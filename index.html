@@ -26,15 +26,33 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="/icons/icon-512.png" />
-    <script type="module" crossorigin src="/assets/index-3MPPCero.js"></script>
+    <script type="module" crossorigin src="/assets/index-zfgMsORr.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/query-BydKBSTv.js">
     <link rel="modulepreload" crossorigin href="/assets/react-7rtBeUo6.js">
     <link rel="modulepreload" crossorigin href="/assets/supabase-CAznsk2E.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-CisKQUMY.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-YVsR--qX.css">
   </head>
 
   <body>
-    <div id="root"></div>
+    <!--
+      Casca de carregamento: aparece na hora, antes do bundle terminar de
+      baixar/rodar, pra nunca ficar uma tela branca seca -- vale tanto pra
+      quem clica dentro do app quanto pra quem abre um link direto (que no
+      GitHub Pages passa pelo 404.html, uma cópia deste mesmo arquivo). Some
+      sozinha assim que o React troca o conteúdo de #root.
+    -->
+    <div id="root">
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fef9ed;">
+        <img src="/icons/icon-192.png" alt="" width="72" height="72"
+             style="opacity:.9;animation:boot-pulse 1.3s ease-in-out infinite;" />
+      </div>
+    </div>
+    <style>
+      @keyframes boot-pulse {
+        0%, 100% { opacity: .55; transform: scale(.92); }
+        50%      { opacity: 1;   transform: scale(1); }
+      }
+    </style>
 
     <script>
       // Só em produção: com o dev server ligado, um service worker ativo
