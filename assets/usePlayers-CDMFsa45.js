@@ -1,0 +1,1 @@
+import{u as a}from"./query-BydKBSTv.js";import{s}from"./index-Dz_TLoLw.js";function u(){return a({queryKey:["players"],staleTime:5*6e4,queryFn:async()=>{const{data:e,error:r}=await s.from("member_directory").select("*").order("nickname");if(r)throw r;return e??[]}})}export{u};
