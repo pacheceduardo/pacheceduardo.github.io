@@ -1,1 +1,0 @@
-import{u as e}from"./query-BydKBSTv.js";import{s as a}from"./index-U7y1FGdv.js";function u(){return e({queryKey:["bearoscopo"],staleTime:60*6e4,queryFn:async()=>{const{data:o,error:r}=await a.rpc("my_bearoscopo");if(r)throw r;return o??[]}})}export{u};
