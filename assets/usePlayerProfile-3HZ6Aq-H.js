@@ -1,0 +1,1 @@
+import{u}from"./query-CUQglBgR.js";import{s as a}from"./index-DJlJ54yO.js";function n(r){return u({enabled:!!r,queryKey:["player-profile",r],queryFn:async()=>{const{data:e,error:o}=await a.rpc("player_profile_v2",{_user_id:r});if(o)throw o;return(e==null?void 0:e[0])??null}})}export{n as u};
