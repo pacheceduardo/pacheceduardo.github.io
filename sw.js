@@ -9,7 +9,7 @@
  * mostrar nada, porque a pessoa confia no número errado.
  */
 
-const CACHE = "4bros-shell-v3";
+const CACHE = "4bros-shell-v4";
 const SHELL = [
   "/",
   "/manifest.webmanifest",
