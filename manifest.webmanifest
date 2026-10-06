@@ -6,17 +6,43 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#fef9ed",
-  "theme_color": "#d56301",
+  "background_color": "#0f0b13",
+  "theme_color": "#140f17",
   "lang": "pt-BR",
-  "categories": ["sports", "social"],
+  "categories": [
+    "sports",
+    "social"
+  ],
   "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "/icons/icon-192-halloween.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512-halloween.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-512-halloween.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "shortcuts": [
-    { "name": "Próximo jogo", "url": "/jogos", "description": "Confirmar presença" },
-    { "name": "Minha carteira", "url": "/carteira", "description": "Ver pendências e PIX" }
+    {
+      "name": "Próximo jogo",
+      "url": "/jogos",
+      "description": "Confirmar presença"
+    },
+    {
+      "name": "Minha carteira",
+      "url": "/carteira",
+      "description": "Ver pendências e PIX"
+    }
   ]
 }
