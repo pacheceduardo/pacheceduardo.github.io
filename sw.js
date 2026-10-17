@@ -9,12 +9,13 @@
  * mostrar nada, porque a pessoa confia no número errado.
  */
 
-const CACHE = "4bros-shell-v4";
+const CACHE = "4bros-shell-v5";
 const SHELL = [
   "/",
   "/manifest.webmanifest",
   "/icons/icon-192.png",
   "/icons/icon-512.png",
+  "/icons/badge-96.png",
 ];
 
 self.addEventListener("install", (event) => {
@@ -87,7 +88,10 @@ self.addEventListener("push", (event) => {
     self.registration.showNotification(data.title || "4Bros", {
       body: data.body || "",
       icon: "/icons/icon-192.png",
-      badge: "/icons/icon-192.png",
+      // Ícone da barra de status (Android): só a silhueta conta, o sistema
+      // pinta de branco. Precisa ser o logo vazado em fundo transparente —
+      // com o ícone colorido (opaco) aparecia um quadrado branco.
+      badge: "/icons/badge-96.png",
       data: { link: data.link || "/dashboard" },
     }),
   );
