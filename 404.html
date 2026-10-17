@@ -15,11 +15,17 @@
     <script>
       (function () {
         try {
+          // Halloween ligado (mesma regra de temporadaDatas.ts + botão do topo):
+          // não mexe, o tema da temporada cuida das cores.
+          var d = new Date();
+          var halloween = (d.getMonth() === 9 || (d.getMonth() === 10 && d.getDate() <= 2))
+            && localStorage.getItem("tema-halloween-desligado") !== "1";
+          if (halloween) return;
           var p = localStorage.getItem("4bros:tema");
           var escuro = p === "escuro" || (p !== "claro" && window.matchMedia("(prefers-color-scheme: dark)").matches);
           if (escuro) {
             document.documentElement.classList.add("dark", "tema-escuro");
-            document.querySelector('meta[name="theme-color"]').content = "#17110c";
+            document.querySelector('meta[name="theme-color"]').content = "#2c2017";
           }
         } catch (e) {}
       })();
@@ -47,11 +53,11 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="/icons/icon-512.png" />
-    <script type="module" crossorigin src="/assets/index-S-yXI5TB.js"></script>
+    <script type="module" crossorigin src="/assets/index-CaaxDsJC.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/query-xZVXccHY.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BVVIix7E.js">
     <link rel="modulepreload" crossorigin href="/assets/supabase-CAznsk2E.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-C1IP70O4.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-CLKNGFER.css">
   </head>
 
   <body>
