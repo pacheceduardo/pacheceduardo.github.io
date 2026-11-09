@@ -9,6 +9,11 @@
     <meta name="robots" content="noindex, nofollow" />
 
     <link rel="manifest" href="/gestao/manifest.webmanifest" />
+    <!-- Inter, a fonte do app (carrega sem travar a primeira pintura). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+          media="print" onload="this.media='all'" />
     <meta name="theme-color" content="#623800" />
     <!-- Tema escuro antes do React subir (mesma chave do app: 4bros:tema). -->
     <script>
@@ -18,7 +23,7 @@
           var escuro = p === "escuro" || (p !== "claro" && window.matchMedia("(prefers-color-scheme: dark)").matches);
           if (escuro) {
             document.documentElement.classList.add("dark", "tema-escuro");
-            document.querySelector('meta[name="theme-color"]').content = "#3d2c1f";
+            document.querySelector('meta[name="theme-color"]').content = "#26201b";
           }
         } catch (e) {}
       })();
@@ -29,15 +34,15 @@
     <meta name="apple-mobile-web-app-title" content="Gestão 4Bros" />
     <link rel="apple-touch-icon" href="/gestao/icons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/gestao/icons/favicon-32.png" />
-    <script type="module" crossorigin src="/gestao/assets/index-BW6cGgPf.js"></script>
+    <script type="module" crossorigin src="/gestao/assets/index-qeP1UhOP.js"></script>
     <link rel="modulepreload" crossorigin href="/gestao/assets/react-DCDSmH_5.js">
     <link rel="modulepreload" crossorigin href="/gestao/assets/query-jqno0vme.js">
-    <link rel="stylesheet" crossorigin href="/gestao/assets/index-BRP64NzW.css">
+    <link rel="stylesheet" crossorigin href="/gestao/assets/index-T5VD0j-f.css">
   </head>
 
   <body>
     <div id="root">
-      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fef9ed;">
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#faf7f2;">
         <img src="/gestao/icons/icon-192.png" alt="" width="72" height="72"
              style="opacity:.9;animation:boot-pulse 1.3s ease-in-out infinite;" />
       </div>

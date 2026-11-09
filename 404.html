@@ -9,7 +9,7 @@
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#d56301" />
+    <meta name="theme-color" content="#ffffff" />
     <!-- Tema escuro oficial antes do React subir (sem piscar claro). Mesma
          chave e mesma regra de src/lib/tema.ts. -->
     <script>
@@ -26,7 +26,7 @@
           var escuro = p === "escuro" || (p !== "claro" && window.matchMedia("(prefers-color-scheme: dark)").matches);
           if (escuro) {
             document.documentElement.classList.add("dark", "tema-escuro");
-            document.querySelector('meta[name="theme-color"]').content = "#3d2c1f";
+            document.querySelector('meta[name="theme-color"]').content = "#26201b";
           }
         } catch (e) {}
       })();
@@ -39,17 +39,14 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 
-    <!-- Só usada nos títulos do Manual (src/pages/Manual.tsx e
-         admin/ManualAdmin.tsx) -- o resto do app usa a fonte padrão do
-         sistema de propósito, ver docs/DESIGN_SYSTEM.md. -->
-    <!-- Carrega sem travar a primeira pintura: antes, toda abertura do app
-         esperava o CSS do Google Fonts (4G ruim na quadra) por uma fonte que
-         só aparece no Manual. -->
+    <!-- Inter (o texto do app todo, paleta Areia) e Baloo 2 (títulos do
+         Manual). Carrega sem travar a primeira pintura: até a fonte chegar
+         (4G ruim na quadra), vale a do sistema. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
           media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" /></noscript>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
     <meta property="og:title" content="4Bros Beach Volley" />
     <meta property="og:description" content="Vôlei, resenha e respeito. Safe space para a comunidade Bear e LGBT+ em Porto Alegre." />
@@ -59,11 +56,11 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="/icons/icon-512.png" />
-    <script type="module" crossorigin src="/assets/index-D0_iPW2p.js"></script>
+    <script type="module" crossorigin src="/assets/index-eLXQjz6w.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/query-BXlQUwKy.js">
     <link rel="modulepreload" crossorigin href="/assets/react-DGoIEDw7.js">
     <link rel="modulepreload" crossorigin href="/assets/supabase-CAznsk2E.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BRP64NzW.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-T5VD0j-f.css">
   </head>
 
   <body>
@@ -75,7 +72,7 @@
       sozinha assim que o React troca o conteúdo de #root.
     -->
     <div id="root">
-      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fef9ed;">
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#faf7f2;">
         <img src="/icons/icon-192.png" alt="" width="72" height="72"
              style="opacity:.9;animation:boot-pulse 1.3s ease-in-out infinite;" />
       </div>

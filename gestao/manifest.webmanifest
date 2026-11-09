@@ -7,7 +7,7 @@
   "scope": "/gestao/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#fef9ed",
+  "background_color": "#faf7f2",
   "theme_color": "#623800",
   "lang": "pt-BR",
   "categories": ["sports", "productivity"],

@@ -1,0 +1,1 @@
+import{r as o}from"./query-BXlQUwKy.js";function c(n){const[u,r]=o.useState(()=>Date.now()),t=n?new Date(n).getTime():null,e=t!==null&&t>u;return o.useEffect(()=>{if(!e||t===null)return;const a=Math.min(Math.max(t-Date.now()+500,0),2e9),s=setTimeout(()=>r(Date.now()),a);return()=>clearTimeout(s)},[e,t]),{pending:e,opensAt:e?n??null:null}}export{c as u};

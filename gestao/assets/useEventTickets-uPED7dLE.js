@@ -1,0 +1,6 @@
+import{l as s,s as n}from"./App-Bc2XZKIA.js";import{b as c,a as o}from"./query-jqno0vme.js";/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y=s("CircleX",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"m15 9-6 6",key:"1uzhvr"}],["path",{d:"m9 9 6 6",key:"z0biqf"}]]),k=e=>{var t,a;return((a=(t=e.match(/[0-9a-f]{32}/i))==null?void 0:t[0])==null?void 0:a.toLowerCase())??null},u=e=>{e.invalidateQueries({queryKey:["event-tickets"]}),e.invalidateQueries({queryKey:["event-attendance"]}),e.invalidateQueries({queryKey:["events"]}),e.invalidateQueries({queryKey:["wallet"]})};function m(){const e=o();return c({mutationFn:async t=>{var r;const{data:a,error:i}=await n.rpc("founder_cancel_event_ticket",{_ticket_id:t.ticketId,_valor_fica:t.valorFica,_reason:((r=t.reason)==null?void 0:r.trim())||void 0});if(i)throw i;return a},onSuccess:()=>{u(e),e.invalidateQueries({queryKey:["admin"]})}})}function v(){return c({mutationFn:async({code:e,mark:t=!1})=>{const{data:a,error:i}=await n.rpc("admin_check_ticket",{_code:e,_mark:t});if(i)throw i;return a}})}export{y as C,v as a,k as e,m as u};
