@@ -9,7 +9,7 @@
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#140f17" />
+    <meta name="theme-color" content="#d56301" />
     <!-- Tema escuro oficial antes do React subir (sem piscar claro). Mesma
          chave e mesma regra de src/lib/tema.ts. -->
     <script>
@@ -19,7 +19,7 @@
           // não mexe, o tema da temporada cuida das cores. O vite.config
           // troca o marcador abaixo pela própria função de temporadaDatas.ts,
           // para as datas não ficarem diferentes das do app.
-          var halloween = ((d = /* @__PURE__ */ new Date()) => d.getMonth() === 9 || d.getMonth() === 10 && d.getDate() <= 8)(new Date())
+          var halloween = ((d = /* @__PURE__ */ new Date()) => d.getMonth() === 9 || d.getMonth() === 10 && d.getDate() <= 2)(new Date())
             && localStorage.getItem("tema-halloween-desligado") !== "1";
           if (halloween) return;
           var p = localStorage.getItem("4bros:tema");
@@ -35,9 +35,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="4Bros" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-halloween.png" />
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-halloween.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 
     <!-- Só usada nos títulos do Manual (src/pages/Manual.tsx e
          admin/ManualAdmin.tsx) -- o resto do app usa a fonte padrão do
@@ -59,11 +59,11 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="/icons/icon-512.png" />
-    <script type="module" crossorigin src="/assets/index-xZ2lA8ET.js"></script>
+    <script type="module" crossorigin src="/assets/index-DYNfV1y0.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/query-BXlQUwKy.js">
     <link rel="modulepreload" crossorigin href="/assets/react-DGoIEDw7.js">
     <link rel="modulepreload" crossorigin href="/assets/supabase-CAznsk2E.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-V7ognuJ7.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-D5Xu-aBg.css">
   </head>
 
   <body>
@@ -75,8 +75,8 @@
       sozinha assim que o React troca o conteúdo de #root.
     -->
     <div id="root">
-      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0f0b13;">
-        <img src="/icons/icon-192-halloween.png" alt="" width="72" height="72"
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fef9ed;">
+        <img src="/icons/icon-192.png" alt="" width="72" height="72"
              style="opacity:.9;animation:boot-pulse 1.3s ease-in-out infinite;" />
       </div>
     </div>
