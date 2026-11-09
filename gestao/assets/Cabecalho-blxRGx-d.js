@@ -1,0 +1,1 @@
+import{j as e}from"./query-jqno0vme.js";const x=({titulo:t,descricao:s,acoes:a})=>e.jsxs("div",{className:"mb-4",children:[e.jsxs("div",{className:"flex flex-wrap items-center justify-between gap-2",children:[e.jsx("h1",{className:"text-xl font-bold",children:t}),a]}),s&&e.jsx("p",{className:"text-sm text-muted-foreground mt-1",children:s})]});export{x as C};

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>4Bros Gestão</title>
+    <meta name="description" content="Painel da diretoria do 4Bros Beach Volley." />
+    <!-- Painel interno: fora de buscador. -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="manifest" href="/gestao/manifest.webmanifest" />
+    <meta name="theme-color" content="#623800" />
+    <!-- Tema escuro antes do React subir (mesma chave do app: 4bros:tema). -->
+    <script>
+      (function () {
+        try {
+          var p = localStorage.getItem("4bros:tema");
+          var escuro = p === "escuro" || (p !== "claro" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          if (escuro) {
+            document.documentElement.classList.add("dark", "tema-escuro");
+            document.querySelector('meta[name="theme-color"]').content = "#3d2c1f";
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Gestão 4Bros" />
+    <link rel="apple-touch-icon" href="/gestao/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/gestao/icons/favicon-32.png" />
+    <script type="module" crossorigin src="/gestao/assets/index-BW6cGgPf.js"></script>
+    <link rel="modulepreload" crossorigin href="/gestao/assets/react-DCDSmH_5.js">
+    <link rel="modulepreload" crossorigin href="/gestao/assets/query-jqno0vme.js">
+    <link rel="stylesheet" crossorigin href="/gestao/assets/index-BRP64NzW.css">
+  </head>
+
+  <body>
+    <div id="root">
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fef9ed;">
+        <img src="/gestao/icons/icon-192.png" alt="" width="72" height="72"
+             style="opacity:.9;animation:boot-pulse 1.3s ease-in-out infinite;" />
+      </div>
+    </div>
+    <style>
+      @keyframes boot-pulse {
+        0%, 100% { opacity: .55; transform: scale(.92); }
+        50%      { opacity: 1;   transform: scale(1); }
+      }
+    </style>
+
+    <script>
+      // Service worker próprio, só para /gestao/ (o do app cuida do resto).
+      // Fora do localhost: com o servidor de desenvolvimento ele atrapalha.
+      if ("serviceWorker" in navigator && location.hostname !== "localhost") {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/gestao/sw.js", { scope: "/gestao/" }).catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
