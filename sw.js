@@ -18,6 +18,19 @@ const SHELL = [
   "/icons/badge-96.png",
 ];
 
+// Cada deploy traz arquivos novos em /assets/ (o nome muda) e os da versão
+// anterior ficavam guardados no celular para sempre -- o cache só é limpo
+// quando muda o nome acima. Guarda os mais recentes; um arquivo apagado
+// daqui volta da rede se for pedido de novo. A casca (SHELL) não entra na
+// conta.
+const MAX_ASSETS = 300;
+const aparar = (cache) =>
+  cache.keys().then((reqs) => {
+    const assets = reqs.filter((r) => new URL(r.url).pathname.startsWith("/assets/"));
+    const sobra = assets.length - MAX_ASSETS;
+    if (sobra > 0) return Promise.all(assets.slice(0, sobra).map((r) => cache.delete(r)));
+  });
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()),
@@ -65,7 +78,7 @@ self.addEventListener("fetch", (event) => {
           fetch(request).then((res) => {
             if (res.ok) {
               const copy = res.clone();
-              caches.open(CACHE).then((c) => c.put(request, copy));
+              caches.open(CACHE).then((c) => c.put(request, copy).then(() => aparar(c)));
             }
             return res;
           }),

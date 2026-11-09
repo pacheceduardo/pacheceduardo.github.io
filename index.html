@@ -15,10 +15,11 @@
     <script>
       (function () {
         try {
-          // Halloween ligado (mesma regra de temporadaDatas.ts + botão do topo):
-          // não mexe, o tema da temporada cuida das cores.
-          var d = new Date();
-          var halloween = (d.getMonth() === 9 || (d.getMonth() === 10 && d.getDate() <= 2))
+          // Halloween ligado (regra de temporadaDatas.ts + botão do topo):
+          // não mexe, o tema da temporada cuida das cores. O vite.config
+          // troca o marcador abaixo pela própria função de temporadaDatas.ts,
+          // para as datas não ficarem diferentes das do app.
+          var halloween = ((d = /* @__PURE__ */ new Date()) => d.getMonth() === 9 || d.getMonth() === 10 && d.getDate() <= 8)(new Date())
             && localStorage.getItem("tema-halloween-desligado") !== "1";
           if (halloween) return;
           var p = localStorage.getItem("4bros:tema");
@@ -41,9 +42,14 @@
     <!-- Só usada nos títulos do Manual (src/pages/Manual.tsx e
          admin/ManualAdmin.tsx) -- o resto do app usa a fonte padrão do
          sistema de propósito, ver docs/DESIGN_SYSTEM.md. -->
+    <!-- Carrega sem travar a primeira pintura: antes, toda abertura do app
+         esperava o CSS do Google Fonts (4G ruim na quadra) por uma fonte que
+         só aparece no Manual. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet"
+          media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" /></noscript>
 
     <meta property="og:title" content="4Bros Beach Volley" />
     <meta property="og:description" content="Vôlei, resenha e respeito. Safe space para a comunidade Bear e LGBT+ em Porto Alegre." />
@@ -53,11 +59,11 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="/icons/icon-512.png" />
-    <script type="module" crossorigin src="/assets/index-0BOTKb-W.js"></script>
+    <script type="module" crossorigin src="/assets/index-BpslIafi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/query-BXlQUwKy.js">
     <link rel="modulepreload" crossorigin href="/assets/react-DGoIEDw7.js">
     <link rel="modulepreload" crossorigin href="/assets/supabase-CAznsk2E.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-CkpTTp8M.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-V7ognuJ7.css">
   </head>
 
   <body>
