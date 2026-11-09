@@ -1,1 +1,0 @@
-import{s as a}from"./App-Bc2XZKIA.js";const r={game:"Jogo",guest:"Convidado",wo_fine:"Multa por W.O.",uniform:"Uniforme",event:"Evento",manual:"Lançamento manual"};async function s(n){const{data:o}=await a.storage.from("proofs").createSignedUrl(n,300);return(o==null?void 0:o.signedUrl)??null}export{r as K,s};
